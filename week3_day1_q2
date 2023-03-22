@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        double amt,i;
+        double emi;
+        Scanner input=new Scanner(System.in);
+        amt=input.nextInt();
+        i=(0.1*amt);
+        double total=amt+i;
+        emi=total/12;
+        String s=String.format("%.2f",emi);
+        System.out.println((int)total);
+        System.out.print(s);
+        
+    }
+}
