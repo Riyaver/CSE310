@@ -3,22 +3,41 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
+import java.lang.*;
 
 public class Solution {
-
-    public static void main(String[] args) {
-        Scanner inp = new Scanner(System.in);
+    private static final DecimalFormat d = new DecimalFormat("0.00");
+    public static void main(String[] args) 
+    {
+        Scanner inp =  new Scanner(System.in);
+        float amt = inp.nextFloat();
         int n = inp.nextInt();
-        if(n<0)
-            System.out.print("Invalid Input");
+        if(n==1)
+        {
+            float wit = inp.nextFloat();
+            if(wit>amt)
+            {
+                System.out.print("Error");
+            }
+            else
+            {
+                float u = amt-wit;
+                System.out.print(d.format(u));
+            }
+        }
+        else if(n==2)
+        {
+            float depo = inp.nextFloat();
+            float t = amt+depo;
+            System.out.print(d.format(t));
+        }
+        else if(n==3)
+        {
+            System.out.print(amt);
+        }
         else
         {
-            for(int i=0; i<=n; i++)
-            {
-                System.out.println(i);
-            }
-            System.out.print("Games End");
+            System.out.print("Error");
         }
-        
     }
 }
