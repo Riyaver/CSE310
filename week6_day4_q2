@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] a = readArray(scanner);
+        int[] b = readArray(scanner);
+        int[] c = readArray(scanner);
+        Set<Integer> common = findCommonElements(a, b, c);
+        List<Integer> sorted = new ArrayList<>(common);
+        Collections.sort(sorted);
+        for (int num : sorted) 
+        {
+            System.out.print(num + " ");
+        }
+    }
+    private static int[] readArray(Scanner scanner) 
+    {
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) 
+        {
+            arr[i] = scanner.nextInt();
+        }
+        return arr;
+    }
+    private static Set<Integer> findCommonElements(int[] a, int[] b, int[] c) 
+    {
+        Set<Integer> s = new HashSet<>();
+        Set<Integer> s1 = new HashSet<>();
+        Set<Integer> s2 = new HashSet<>();
+        for (int i=0; i<a.length; i++) 
+        {
+            s1.add(a[i]);
+        }
+        for (int i=0; i<b.length; i++) 
+        {
+            s2.add(b[i]);
+        }
+
+        for(int i=0; i<c.length; i++) 
+        {
+            if (s1.contains(c[i]) && s2.contains(c[i])) 
+            {
+                s.add(c[i]);
+            }
+        }
+        return s;
+    }
+}
