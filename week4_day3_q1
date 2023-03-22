@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int n = inp.nextInt();
+        int a[] = new int[n];
+        int p=0;
+        int q=-1, count=0;
+        for(int i=0; i<n; i++)
+        {
+            a[i] = inp.nextInt();
+            if(a[i]<0)
+            {
+                count++;
+            }
+            if(a[i]>p)
+            {
+                q = p;
+                p = a[i];
+            }
+        }
+        if(count>0)
+        {
+            System.out.print("Invalid Array Size");;
+        }
+        else
+        {
+          System.out.print(q);  
+        }
+        
+    }
+}
