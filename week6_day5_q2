@@ -1,0 +1,59 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+class Student {
+
+    String name;
+
+    int registrationNo;
+
+    void show() {
+
+        System.out.println(name + "," + registrationNo);
+
+    }
+
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner inp = new Scanner(System.in);
+
+        Student student = new Student();
+
+        int choice = inp.nextInt();
+
+        switch (choice) {
+
+            case 1:
+
+                student.name = inp.next();
+
+                student.registrationNo =inp.nextInt();
+
+                while (student.registrationNo <= 0) {
+
+                    student.registrationNo = inp.nextInt();
+
+                }
+
+                student.show();
+
+                break;
+
+            case 2:
+
+                student.show();
+
+                break;
+
+            default:
+
+                System.out.println("Wrong Choice");
+
+        }
+    }
+}
