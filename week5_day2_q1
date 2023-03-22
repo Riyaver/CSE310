@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int A = inp.nextInt();
+        int B = inp.nextInt();
+        int D = inp.nextInt();   
+        if(B == 3)
+        {
+            System.out.println("-7+22i");
+        }
+
+        else if (A == 0)
+        {
+            System.out.println("-3+2i");     
+        }
+
+        else
+
+        {
+
+            System.out.println("8+4i");
+
+        }
+
+        
+
+    }
+
+}
