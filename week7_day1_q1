@@ -1,0 +1,47 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class EvaluateTest {
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        String s = inp.nextLine().toUpperCase();
+        if (s.length() != 5 || !s.matches("[A-D]+")) 
+        {
+            System.out.println("Incorrect Input");
+            return;
+        }
+        int no = inp.nextInt();
+        inp.nextLine(); 
+        String[] ans = new String[no];
+        double[] marks = new double[no];
+        for (int i = 0; i < no; i++) 
+        {
+            ans[i] = inp.nextLine().toUpperCase();
+            if (ans[i].length() != 5 || !ans[i].matches("[A-DX]+")) 
+            {
+                System.out.println("Incorrect Input");
+                return;
+            }
+            for (int j = 0; j < 5; j++) {
+                if (ans[i].charAt(j) == 'X') 
+                {
+                    continue;
+                } 
+                else if(ans[i].charAt(j) == s.charAt(j)) 
+                {
+                    marks[i]++;
+                } 
+                else 
+                {
+                    marks[i] -= 0.25;
+                }
+            }
+        }
+        for (double x : marks) {
+            System.out.print(x + " ");
+        }
+    }
+}
