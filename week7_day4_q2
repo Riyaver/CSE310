@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        String inputString = inp.nextLine();
+        String reversedString = reverseWords(inputString);
+        System.out.println(reversedString);
+    }
+    public static String reverseWords(String str) {
+        if (str == null || str.matches(".*\\d.*")) {
+            return "Invalid input";
+        }
+        String[] words = str.split(" ");
+        StringBuilder reversedWords = new StringBuilder();
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder(word.toLowerCase());
+            reversedWords.append(reversedWord.reverse() + " ");
+        }
+        return reversedWords.toString().trim();
+    }
+}
