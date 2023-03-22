@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        int id = inp.nextInt();
+        inp.nextLine();
+        String name = inp.nextLine();
+        String post = inp.nextLine();
+        if(id<201)
+        {
+            System.out.print("No Appraisal");
+        }
+        else
+        {
+            System.out.println(name);
+            System.out.println(id);
+            System.out.println((20000+1000));
+        }
+    }
+}
