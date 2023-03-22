@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        double d = s.nextDouble();
+        if(d>0)
+            System.out.print((int)d);
+        else
+            System.out.println("Invalid Input");
+    }
+}
