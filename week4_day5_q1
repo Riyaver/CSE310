@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+
+public class AverageMarks {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+
+ // Read the number of subjects
+ int n = sc.nextInt();
+
+
+ double[][] marks = new double[n][];
+ for (int i = 0; i < n; i++) {
+ int numCAs = sc.nextInt();
+ marks[i] = new double[numCAs];
+ for (int j = 0; j < numCAs; j++) {
+ marks[i][j] = sc.nextDouble();
+ }
+ }
+ int subjectNumber = sc.nextInt() - 1;
+ double sum = 0;
+ for (int i = 0; i < marks[subjectNumber].length; i++) {
+ sum += marks[subjectNumber][i];
+ }
+ double avg = sum / marks[subjectNumber].length;
+ System.out.printf("Average in Subject-%d is %.1f", subjectNumber + 1, avg);
+ }
+}
