@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) 
+    {
+        Scanner inp = new Scanner(System.in);
+        int n = inp.nextInt();
+        inp.nextLine();  
+        double[][] a = new double[n][];
+        for(int i=0; i<n; i++) 
+        {
+            String s = inp.nextLine().trim();
+            String[] s1 = s.split("\\s+");
+            int s1l=s1.length;
+            a[i] = new double[s1l];
+            for (int j=0; j<s1l; j++) 
+            {
+                a[i][j] = Double.parseDouble(s1[j]);
+            }
+        }
+
+        double[] b = avg(a);
+        for (int i = 0; i < n; i++) 
+        {
+            System.out.print(b[i]);
+            if (i< n-1) 
+            {
+                System.out.print(" ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static double[] avg(double[][] a) 
+    {
+        double[] total = new double[a.length];
+        for (int i=0 ; i<a.length; i++) 
+        {
+            Arrays.sort(a[i]);
+            total[i] = (a[i][1] + a[i][2]) / 2.0;
+        }
+        return total;
+    }
+}
